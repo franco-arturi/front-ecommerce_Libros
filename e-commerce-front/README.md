@@ -1,16 +1,45 @@
-# React + Vite
+# Frontend de Librería JU
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Proyecto frontend del TPO de Aplicaciones Interactivas, desarrollado con React y Vite.
 
-Currently, two official plugins are available:
+## Requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js 20 o superior.
+- npm.
 
-## React Compiler
+## Cómo ejecutar el proyecto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the Oxlint configuration
+Vite mostrará en la terminal la dirección local para abrir la aplicación.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Comandos disponibles
+
+```bash
+npm run dev
+npm run lint
+npm run build
+npm run preview
+```
+
+## Organización
+
+```text
+src/
+├── components/
+│   ├── catalogo/     # Buscador, filtros, lista y tarjetas
+│   └── comunes/      # Componentes compartidos entre pantallas
+├── pages/            # Pantallas completas de la aplicación
+└── services/         # Acceso a los datos locales o a la API
+
+public/data/           # JSON que simulan las respuestas del backend
+```
+
+## Datos simulados
+
+La pantalla de inicio obtiene libros y categorías desde archivos JSON alojados en `public/data`. Sus campos coinciden con los DTO de listado del backend.
+
+Cuando se realice la integración con Spring Boot, se podrá reemplazar el origen de los datos dentro de `src/services/catalogoService.js` sin modificar los componentes visuales.
