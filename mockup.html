@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diagrama de pantallas - Librería JU</title>
+  <style>
+:root {
+  --azul: #173a5e;
+  --celeste: #2079bd;
+  --fondo: #f4f7fa;
+  --suave: #e5eff7;
+  --borde: #aec2d3;
+  --texto: #1f3449;
+  --secundario: #617589;
+  --blanco: #fff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--texto);
+  background: #dfe6ec;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hoja {
+  width: min(1920px, 100%);
+  min-height: 1080px;
+  margin: 0 auto;
+  padding: 38px 52px 28px;
+  background: var(--fondo);
+  border-top: 12px solid var(--celeste);
+}
+
+.encabezado h1 {
+  margin: 0;
+  font-size: clamp(28px, 2.1vw, 42px);
+  text-transform: uppercase;
+  letter-spacing: -.5px;
+}
+
+.encabezado p { margin: 10px 0 30px; color: var(--secundario); font-size: 18px; }
+section > h2 { margin: 0 0 12px; font-size: 20px; text-transform: uppercase; }
+
+.recorrido {
+  display: grid;
+  align-items: center;
+  gap: 8px;
+}
+
+.recorrido-compra { grid-template-columns: 260px 60px 260px 60px 260px 60px 260px minmax(360px, 1fr); }
+.recorrido-administracion { grid-template-columns: 234px 52px 234px 52px 234px 52px 234px minmax(350px, 1.3fr) minmax(270px, .8fr); }
+
+.paso { position: relative; min-width: 0; }
+.numero {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  z-index: 2;
+  top: -22px;
+  left: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: var(--celeste);
+  background: var(--suave);
+  font-weight: 700;
+}
+
+.pantalla {
+  height: 374px;
+  overflow: hidden;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 9px;
+  box-shadow: 0 1px 2px rgb(23 58 94 / 8%);
+}
+
+.pantalla-baja { height: 288px; }
+.barra { display: flex; justify-content: space-between; padding: 11px 13px; color: white; background: var(--azul); font-size: 10px; }
+.contenido { padding: 14px 16px; }
+.contenido h3 { margin: 0 0 14px; font-size: 17px; }
+.campo { margin: 0 0 9px; padding: 9px 10px; color: var(--secundario); border: 1px solid var(--borde); border-radius: 5px; font-size: 10px; }
+.etiquetas { display: flex; gap: 8px; margin-bottom: 12px; }
+.etiquetas span { flex: 1; padding: 7px; border-radius: 20px; background: var(--suave); text-align: center; font-size: 9px; font-weight: 700; }
+.tarjetas { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.tarjeta-libro { display: grid; grid-template-columns: 45px 1fr; gap: 4px 8px; padding: 8px; border: 1px solid var(--borde); border-radius: 5px; font-size: 9px; }
+.tarjeta-libro i { grid-row: span 3; height: 55px; border: 1px solid var(--borde); border-radius: 4px; background: var(--suave); }
+.tarjeta-libro strong { color: var(--celeste); }
+.tarjeta-libro small { grid-column: 1 / -1; text-align: center; }
+.endpoint { margin-top: 14px; padding: 9px; border-radius: 5px; color: var(--celeste); background: var(--suave); text-align: center; font-size: 8px; font-weight: 700; }
+
+.resultados { display: grid; grid-template-columns: 70px 1fr; gap: 10px; }
+.resultados aside { display: flex; flex-direction: column; padding: 12px; background: var(--suave); font-size: 9px; }
+.lista { display: grid; gap: 8px; }
+.lista > div { display: grid; grid-template-columns: 42px 1fr; gap: 3px 8px; padding: 7px; border: 1px solid var(--borde); border-radius: 5px; font-size: 9px; }
+.lista i { grid-row: span 2; height: 42px; background: var(--suave); border: 1px solid var(--borde); border-radius: 4px; }
+.lista strong { color: var(--celeste); }
+
+.detalle { display: grid; grid-template-columns: 108px 1fr; gap: 14px; }
+.imagen { display: grid; place-items: center; height: 132px; color: var(--secundario); background: var(--suave); border: 1px solid var(--borde); border-radius: 5px; font-size: 12px; font-weight: 700; }
+.detalle h4 { margin: 5px 0; font-size: 17px; }
+.detalle small, .detalle span { display: block; margin: 7px 0; font-size: 9px; }
+.detalle strong { display: block; margin: 10px 0; color: var(--celeste); font-size: 18px; }
+.detalle span { padding: 7px; border-radius: 20px; background: var(--suave); text-align: center; }
+.descripcion { margin: 14px 0; font-size: 9px; }
+.acciones { display: grid; grid-template-columns: 1fr 1.4fr; gap: 8px; }
+.acciones span { padding: 10px; border: 1px solid var(--borde); border-radius: 5px; font-size: 9px; }
+button { border: 0; border-radius: 5px; color: white; background: var(--celeste); font-weight: 700; cursor: pointer; }
+
+.item-carrito { display: grid; grid-template-columns: 42px 1fr 52px 52px; align-items: center; gap: 8px; margin-bottom: 10px; padding: 8px; border: 1px solid var(--borde); border-radius: 5px; font-size: 9px; }
+.item-carrito i { height: 42px; background: var(--suave); border: 1px solid var(--borde); border-radius: 4px; }
+.item-carrito span { padding: 5px; border-radius: 4px; background: var(--suave); text-align: center; }
+.item-carrito strong { color: var(--celeste); }
+.total { text-align: right; font-size: 16px; font-weight: 700; }
+.boton-ancho { width: 100%; min-height: 34px; }
+
+.filas { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.filas li { display: flex; justify-content: space-between; gap: 8px; padding: 11px; border: 1px solid var(--borde); border-radius: 5px; font-size: 9px; }
+.filas span { color: var(--celeste); }
+
+.flecha { text-align: center; color: var(--texto); font-size: 12px; font-weight: 700; }
+.flecha span { display: block; }
+.flecha b { display: block; color: var(--celeste); font-size: 42px; line-height: 30px; }
+
+.panel { align-self: stretch; padding: 22px; border: 1px solid var(--borde); border-radius: 9px; background: var(--blanco); }
+.panel h2 { margin: 0 0 20px; font-size: 18px; text-transform: uppercase; }
+.componentes { background: var(--suave); }
+.componentes dl { display: grid; grid-template-columns: 155px 1fr; gap: 28px 16px; margin: 0; font-size: 11px; }
+.componentes dt { color: var(--celeste); font-weight: 700; }
+.componentes dd { margin: 0; color: var(--texto); }
+.contrato { color: white; background: #172b3e; }
+.contrato pre { overflow-wrap: anywhere; white-space: pre-wrap; font: 11px/1.35 Consolas, monospace; }
+.contrato p { margin: 26px 0 0; text-align: center; font-size: 10px; font-weight: 700; }
+.adaptable p { font-size: 12px; line-height: 1.4; }
+
+section + section { margin-top: 68px; }
+footer { margin-top: 70px; text-align: center; font-weight: 700; }
+
+@media (max-width: 1250px) {
+  .hoja { padding: 32px 24px; }
+  .recorrido-compra,
+  .recorrido-administracion { grid-template-columns: minmax(260px, 1fr); gap: 35px; }
+  .flecha { transform: rotate(90deg); height: 24px; }
+  .flecha span { display: none; }
+  .pantalla, .pantalla-baja { height: auto; min-height: 350px; }
+  .panel { min-height: 260px; }
+  .componentes dl { grid-template-columns: 1fr; gap: 8px; }
+  .componentes dd { margin-bottom: 14px; }
+}
+
+@media print {
+  body { background: white; }
+  .hoja { width: 1920px; }
+}
+
+  </style>
+</head>
+<body>
+  <main class="hoja">
+    <header class="encabezado">
+      <h1>Diagrama de flujo de pantallas · Librería JU</h1>
+      <p>Actividad 3 · Boceto de navegación y pantallas</p>
+    </header>
+
+    <section aria-labelledby="compra">
+      <h2 id="compra">Recorrido de compra</h2>
+      <div class="recorrido recorrido-compra">
+        <article class="paso">
+          <span class="numero">1</span>
+          <div class="pantalla">
+            <div class="barra"><strong>Librería JU</strong><span>Inicio</span></div>
+            <div class="contenido">
+              <h3>Inicio y catálogo</h3>
+              <div class="campo">Buscar por título</div>
+              <div class="etiquetas"><span>Categorías</span><span>Destacados</span></div>
+              <div class="tarjetas">
+                <div class="tarjeta-libro"><i></i><b>Clean Code</b><strong>$25.000</strong><small>Ver detalle</small></div>
+                <div class="tarjeta-libro"><i></i><b>1984</b><strong>$18.500</strong><small>Ver detalle</small></div>
+              </div>
+              <div class="endpoint">GET /api/libros<br>GET /api/categorias</div>
+            </div>
+          </div>
+        </article>
+
+        <div class="flecha"><span>Buscar</span><b>→</b></div>
+
+        <article class="paso">
+          <span class="numero">2</span>
+          <div class="pantalla">
+            <div class="barra"><strong>Librería JU</strong><span>Resultados</span></div>
+            <div class="contenido">
+              <h3>Resultados</h3>
+              <div class="resultados">
+                <aside><b>Filtros</b><span>Categoría</span><span>Precio</span><span>Ubicación</span><span>Título</span></aside>
+                <div class="lista">
+                  <div><i></i><b>Clean Code</b><strong>$25.000</strong></div>
+                  <div><i></i><b>1984</b><strong>$18.500</strong></div>
+                  <div><i></i><b>El Principito</b><strong>$15.000</strong></div>
+                </div>
+              </div>
+              <div class="endpoint">GET /api/libros?titulo=...&amp;categoriaId=...</div>
+            </div>
+          </div>
+        </article>
+
+        <div class="flecha"><span>Elegir libro</span><b>→</b></div>
+
+        <article class="paso">
+          <span class="numero">3</span>
+          <div class="pantalla">
+            <div class="barra"><strong>Librería JU</strong><span>Detalle</span></div>
+            <div class="contenido">
+              <h3>Detalle del libro</h3>
+              <div class="detalle">
+                <div class="imagen">IMAGEN</div>
+                <div><h4>Clean Code</h4><small>Robert C. Martin</small><strong>$25.000</strong><span>Programación</span></div>
+              </div>
+              <p class="descripcion">Descripción del libro y stock disponible.</p>
+              <div class="acciones"><span>Cantidad: 1</span><button>Agregar al carrito</button></div>
+              <div class="endpoint">GET /api/libros/{id}<br>GET /api/libros/{id}/imagenes</div>
+            </div>
+          </div>
+        </article>
+
+        <div class="flecha"><span>Agregar</span><b>→</b></div>
+
+        <article class="paso">
+          <span class="numero">4</span>
+          <div class="pantalla">
+            <div class="barra"><strong>Librería JU</strong><span>Carrito</span></div>
+            <div class="contenido">
+              <h3>Carrito y compra</h3>
+              <div class="item-carrito"><i></i><b>Clean Code</b><span>− &nbsp;1&nbsp; +</span><strong>$25.000</strong></div>
+              <div class="item-carrito"><i></i><b>El Principito</b><span>− &nbsp;1&nbsp; +</span><strong>$15.000</strong></div>
+              <p class="total">Total: $40.000</p>
+              <button class="boton-ancho">Finalizar compra</button>
+              <div class="endpoint">GET · POST · PUT · DELETE carrito<br>POST /checkout</div>
+            </div>
+          </div>
+        </article>
+
+        <aside class="panel componentes">
+          <h2>Componentes principales</h2>
+          <dl>
+            <dt>Inicio y resultados</dt><dd>BarraNavegacion · Buscador · FiltroCategorias · ListaLibros · TarjetaLibro</dd>
+            <dt>Detalle</dt><dd>GaleriaImagenes · InformacionLibro · SelectorCantidad · BotonAgregarCarrito</dd>
+            <dt>Carrito</dt><dd>ListaCarrito · ItemCarrito · ResumenCompra · BotonFinalizarCompra</dd>
+            <dt>Gestión</dt><dd>FormularioLibro · AdministradorImagenes · FormularioCategoria · ListaUsuarios</dd>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section aria-labelledby="administracion">
+      <h2 id="administracion">Acceso y administración</h2>
+      <div class="recorrido recorrido-administracion">
+        <article class="paso">
+          <span class="numero">5</span>
+          <div class="pantalla pantalla-baja">
+            <div class="barra"><strong>Librería JU</strong><span>Acceso</span></div>
+            <div class="contenido">
+              <h3>Registro e inicio de sesión</h3>
+              <div class="campo">Correo electrónico</div>
+              <div class="campo">Contraseña</div>
+              <button class="boton-ancho">Iniciar sesión</button>
+              <div class="endpoint">POST /register · POST /login<br>GET /usuarios/{id}</div>
+            </div>
+          </div>
+        </article>
+
+        <div class="flecha"><span>Entrar</span><b>→</b></div>
+
+        <article class="paso">
+          <span class="numero">6</span>
+          <div class="pantalla pantalla-baja">
+            <div class="barra"><strong>Librería JU</strong><span>Libros</span></div>
+            <div class="contenido">
+              <h3>Libros e imágenes</h3>
+              <ul class="filas"><li><b>Clean Code</b><span>Editar · Stock · Imagen</span></li><li><b>1984</b><span>Editar · Stock · Imagen</span></li><li><b>El Principito</b><span>Editar · Stock · Imagen</span></li></ul>
+              <div class="endpoint">POST · PUT · DELETE /libros<br>POST · DELETE /imagenes</div>
+            </div>
+          </div>
+        </article>
+
+        <div class="flecha"><span>Gestionar</span><b>→</b></div>
+
+        <article class="paso">
+          <span class="numero">7</span>
+          <div class="pantalla pantalla-baja">
+            <div class="barra"><strong>Librería JU</strong><span>Categorías</span></div>
+            <div class="contenido">
+              <h3>Categorías</h3>
+              <ul class="filas"><li><b>Programación</b><span>Editar · Eliminar</span></li><li><b>Infantil</b><span>Editar · Eliminar</span></li><li><b>Novela</b><span>Editar · Eliminar</span></li></ul>
+              <div class="endpoint">GET · POST · PUT · DELETE<br>/api/categorias</div>
+            </div>
+          </div>
+        </article>
+
+        <div class="flecha"><span>Consultar</span><b>→</b></div>
+
+        <article class="paso">
+          <span class="numero">8</span>
+          <div class="pantalla pantalla-baja">
+            <div class="barra"><strong>Librería JU</strong><span>Usuarios</span></div>
+            <div class="contenido">
+              <h3>Usuarios</h3>
+              <ul class="filas"><li><b>Paula Arturi</b><span>Ver</span></li><li><b>Juan Pérez</b><span>Ver</span></li><li><b>Ana Gómez</b><span>Ver</span></li></ul>
+              <div class="endpoint">GET /usuarios/listarUser<br>GET /usuarios/{id}</div>
+            </div>
+          </div>
+        </article>
+
+        <aside class="panel contrato">
+          <h2>Contrato de datos · JSON simulado</h2>
+<pre>{
+  "id": 1,
+  "titulo": "Clean Code",
+  "autor": "Robert C. Martin",
+  "precio": 25000,
+  "stock": 8,
+  "categoria": { "id": 1, "nombre": "Programación" },
+  "imagenes": [{ "id": 1, "url": "/img/clean-code.jpg" }]
+}</pre>
+          <p>La estructura coincide con los DTO del backend.</p>
+        </aside>
+
+        <aside class="panel adaptable">
+          <h2>Diseño adaptable</h2>
+          <p>La grilla pasa a una columna. Los filtros se abren en un panel. Los formularios y botones ocupan el ancho disponible. Las tablas administrativas se muestran como tarjetas.</p>
+        </aside>
+      </div>
+    </section>
+
+    <footer>Los nombres técnicos del código se mantienen en los endpoints. El resto del esquema está expresado en español.</footer>
+  </main>
+</body>
+</html>
+
