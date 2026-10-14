@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "nombre": "Programación",
+    "descripcion": "Libros sobre desarrollo de software y tecnología."
+  },
+  {
+    "id": 2,
+    "nombre": "Novela",
+    "descripcion": "Historias clásicas y contemporáneas."
+  },
+  {
+    "id": 3,
+    "nombre": "Infantil",
+    "descripcion": "Lecturas para las primeras etapas."
+  },
+  {
+    "id": 4,
+    "nombre": "Ciencia ficción",
+    "descripcion": "Relatos de futuros posibles y mundos imaginarios."
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "titulo": "Clean Code",
+    "autor": "Robert C. Martin",
+    "precio": 25000,
+    "categoria": {
+      "id": 1,
+      "nombre": "Programación",
+      "descripcion": "Libros sobre desarrollo de software y tecnología."
+    }
+  },
+  {
+    "id": 2,
+    "titulo": "1984",
+    "autor": "George Orwell",
+    "precio": 18500,
+    "categoria": {
+      "id": 2,
+      "nombre": "Novela",
+      "descripcion": "Historias clásicas y contemporáneas."
+    }
+  },
+  {
+    "id": 3,
+    "titulo": "El Principito",
+    "autor": "Antoine de Saint-Exupéry",
+    "precio": 15000,
+    "categoria": {
+      "id": 3,
+      "nombre": "Infantil",
+      "descripcion": "Lecturas para las primeras etapas."
+    }
+  },
+  {
+    "id": 4,
+    "titulo": "Fahrenheit 451",
+    "autor": "Ray Bradbury",
+    "precio": 21000,
+    "categoria": {
+      "id": 4,
+      "nombre": "Ciencia ficción",
+      "descripcion": "Relatos de futuros posibles y mundos imaginarios."
+    }
+  },
+  {
+    "id": 5,
+    "titulo": "El código limpio",
+    "autor": "Robert C. Martin",
+    "precio": 27500,
+    "categoria": {
+      "id": 1,
+      "nombre": "Programación",
+      "descripcion": "Libros sobre desarrollo de software y tecnología."
+    }
+  },
+  {
+    "id": 6,
+    "titulo": "Crónica de una muerte anunciada",
+    "autor": "Gabriel García Márquez",
+    "precio": 19500,
+    "categoria": {
+      "id": 2,
+      "nombre": "Novela",
+      "descripcion": "Historias clásicas y contemporáneas."
+    }
+  }
+]
