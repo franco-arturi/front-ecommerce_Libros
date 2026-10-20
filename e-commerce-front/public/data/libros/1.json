@@ -1,0 +1,24 @@
+{
+  "id": 1,
+  "titulo": "Clean Code",
+  "autor": "Robert C. Martin",
+  "precio": 25000,
+  "stock": 8,
+  "descripcion": "Una guía práctica para escribir código legible, mantenible y fácil de probar, con ejemplos y principios aplicables a cualquier lenguaje.",
+  "categoria": {
+    "id": 1,
+    "nombre": "Programación",
+    "descripcion": "Libros sobre desarrollo de software y tecnología."
+  },
+  "imagenes": [
+    {
+      "id": 1,
+      "url": "/img/libros/clean-code-tapa.jpg"
+    },
+    {
+      "id": 2,
+      "url": "/img/libros/clean-code-contratapa.jpg"
+    }
+  ],
+  "vendedorId": 1
+}
