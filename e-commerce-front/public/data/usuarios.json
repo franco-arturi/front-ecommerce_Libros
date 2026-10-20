@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "email": "admin@ecommerce.com",
+    "nombre": "Admin",
+    "apellido": "Sistema",
+    "rol": "ADMIN"
+  },
+  {
+    "id": 2,
+    "username": "parturi",
+    "email": "paula.arturi@demo.com",
+    "nombre": "Paula",
+    "apellido": "Arturi",
+    "rol": "USER"
+  },
+  {
+    "id": 3,
+    "username": "jperez",
+    "email": "juan.perez@demo.com",
+    "nombre": "Juan",
+    "apellido": "Pérez",
+    "rol": "USER"
+  },
+  {
+    "id": 4,
+    "username": "agomez",
+    "email": "ana.gomez@demo.com",
+    "nombre": "Ana",
+    "apellido": "Gómez",
+    "rol": "USER"
+  }
+]
