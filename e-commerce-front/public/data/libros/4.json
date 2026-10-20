@@ -1,0 +1,20 @@
+{
+  "id": 4,
+  "titulo": "Fahrenheit 451",
+  "autor": "Ray Bradbury",
+  "precio": 21000,
+  "stock": 0,
+  "descripcion": "En un futuro donde los libros están prohibidos, un bombero empieza a cuestionar su trabajo de quemarlos.",
+  "categoria": {
+    "id": 4,
+    "nombre": "Ciencia ficción",
+    "descripcion": "Relatos de futuros posibles y mundos imaginarios."
+  },
+  "imagenes": [
+    {
+      "id": 5,
+      "url": "/img/libros/fahrenheit-451-tapa.jpg"
+    }
+  ],
+  "vendedorId": 1
+}

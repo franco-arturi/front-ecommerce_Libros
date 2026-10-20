@@ -1,0 +1,20 @@
+{
+  "id": 3,
+  "titulo": "El Principito",
+  "autor": "Antoine de Saint-Exupéry",
+  "precio": 15000,
+  "stock": 15,
+  "descripcion": "Un piloto perdido en el desierto conoce a un pequeño príncipe que le enseña a mirar con el corazón.",
+  "categoria": {
+    "id": 3,
+    "nombre": "Infantil",
+    "descripcion": "Lecturas para las primeras etapas."
+  },
+  "imagenes": [
+    {
+      "id": 4,
+      "url": "/img/libros/el-principito-tapa.jpg"
+    }
+  ],
+  "vendedorId": 1
+}
