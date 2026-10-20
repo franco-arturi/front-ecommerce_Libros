@@ -1,8 +1,5 @@
-const formatoPrecio = new Intl.NumberFormat('es-AR', {
-  style: 'currency',
-  currency: 'ARS',
-  maximumFractionDigits: 0,
-})
+import { Link } from 'react-router-dom'
+import { formatoPrecio } from '../../utils/formato.js'
 
 function TarjetaLibro({ libro }) {
   return (
@@ -18,9 +15,9 @@ function TarjetaLibro({ libro }) {
 
         <div className="tarjeta-pie">
           <strong>{formatoPrecio.format(libro.precio)}</strong>
-          <button type="button" aria-label={`Ver detalle de ${libro.titulo}`}>
+          <Link to={`/libros/${libro.id}`} aria-label={`Ver detalle de ${libro.titulo}`}>
             Ver detalle
-          </button>
+          </Link>
         </div>
       </div>
     </article>

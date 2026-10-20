@@ -16,3 +16,12 @@ export const obtenerCatalogo = async () => {
 
   return { libros, categorias }
 }
+
+export const obtenerDetalleLibro = async (id) => {
+  const [libro, imagenes] = await Promise.all([
+    obtenerJson(`/data/libros/${id}.json`),
+    obtenerJson(`/data/libros/${id}/imagenes.json`),
+  ])
+
+  return { libro, imagenes }
+}

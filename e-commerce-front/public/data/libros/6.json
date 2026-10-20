@@ -1,0 +1,15 @@
+{
+  "id": 6,
+  "titulo": "Crónica de una muerte anunciada",
+  "autor": "Gabriel García Márquez",
+  "precio": 19500,
+  "stock": 6,
+  "descripcion": "La reconstrucción de un crimen anunciado que todo el pueblo conocía y nadie pudo evitar.",
+  "categoria": {
+    "id": 2,
+    "nombre": "Novela",
+    "descripcion": "Historias clásicas y contemporáneas."
+  },
+  "imagenes": [],
+  "vendedorId": 1
+}

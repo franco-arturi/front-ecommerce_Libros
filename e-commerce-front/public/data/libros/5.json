@@ -1,0 +1,20 @@
+{
+  "id": 5,
+  "titulo": "El código limpio",
+  "autor": "Robert C. Martin",
+  "precio": 27500,
+  "stock": 3,
+  "descripcion": "Edición en español del clásico sobre buenas prácticas de programación y desarrollo ágil de software.",
+  "categoria": {
+    "id": 1,
+    "nombre": "Programación",
+    "descripcion": "Libros sobre desarrollo de software y tecnología."
+  },
+  "imagenes": [
+    {
+      "id": 6,
+      "url": "/img/libros/el-codigo-limpio-tapa.jpg"
+    }
+  ],
+  "vendedorId": 1
+}
