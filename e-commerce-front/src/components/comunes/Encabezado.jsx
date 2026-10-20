@@ -12,6 +12,7 @@ function Encabezado() {
         <nav className="navegacion" aria-label="Navegación principal">
           <a href="/#catalogo">Catálogo</a>
           <a href="/#categorias">Categorías</a>
+          <Link to="/usuarios">Usuarios</Link>
           <button className="boton-carrito" type="button" aria-label="Abrir carrito">
             <span aria-hidden="true">🛒</span>
             Carrito
