@@ -1,0 +1,56 @@
+/* Pantalla 7 - Categorías. Reutiliza la tabla y el formulario de gestionLibros.css. */
+
+.gestion-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gestion-acciones .enlace-secundario {
+  padding: 10px 18px;
+  border: 1px solid var(--azul-principal);
+  border-radius: 8px;
+  color: var(--azul-principal);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.gestion-acciones .enlace-secundario:hover,
+.gestion-acciones .enlace-secundario:focus-visible {
+  color: var(--blanco);
+  background: var(--azul-principal);
+}
+
+.formulario-categoria {
+  grid-template-columns: 1fr;
+}
+
+.formulario-categoria textarea {
+  padding: 9px 11px;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  color: var(--azul-texto);
+  background: var(--blanco);
+  font: inherit;
+  font-size: 0.95rem;
+  resize: vertical;
+}
+
+.libro-acciones button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.libro-acciones .boton-peligro:disabled:hover {
+  color: #8a3030;
+  background: transparent;
+}
+
+@media (max-width: 680px) {
+  .tabla-gestion td[data-etiqueta='Libros']::before {
+    content: attr(data-etiqueta);
+    display: block;
+    color: var(--texto-secundario);
+    font-size: 0.78rem;
+  }
+}
