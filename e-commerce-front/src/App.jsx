@@ -5,6 +5,7 @@ import InicioPagina from './pages/InicioPagina.jsx'
 import ResultadosPagina from './pages/ResultadosPagina.jsx'
 import UsuariosPagina from './pages/UsuariosPagina.jsx'
 import CarritoPagina from './pages/CarritoPagina.jsx'
+import GestionLibrosPagina from './pages/GestionLibrosPagina.jsx'
 import './App.css'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/libros/:id" element={<DetalleLibroPagina />} />
         <Route path="/usuarios" element={<UsuariosPagina />} />
         <Route path="/carrito" element={<CarritoPagina />} />
+        <Route path="/gestion/libros" element={<GestionLibrosPagina />} />
       </Routes>
     </>
   )

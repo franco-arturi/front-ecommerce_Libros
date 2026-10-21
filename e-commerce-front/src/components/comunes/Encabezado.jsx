@@ -13,6 +13,7 @@ function Encabezado() {
           <a href="/#catalogo">Catálogo</a>
           <a href="/#categorias">Categorías</a>
           <Link to="/usuarios">Usuarios</Link>
+          <Link to="/gestion/libros">Gestión</Link>
           <Link className="boton-carrito" to="/carrito" aria-label="Ir al carrito">
             <span aria-hidden="true">🛒</span>
             Carrito
