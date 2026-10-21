@@ -59,6 +59,19 @@
   color: var(--blanco);
 }
 
+.boton-salir {
+  padding: 0;
+  border: 0;
+  color: rgba(255, 255, 255, 0.84);
+  background: transparent;
+  text-decoration: underline;
+}
+
+.boton-salir:hover,
+.boton-salir:focus-visible {
+  color: var(--blanco);
+}
+
 .boton-carrito {
   display: inline-flex;
   align-items: center;

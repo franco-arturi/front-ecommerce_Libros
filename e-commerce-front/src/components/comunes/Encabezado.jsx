@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-function Encabezado() {
+function Encabezado({ usuario, alCerrarSesion }) {
   return (
     <header className="encabezado-principal">
       <div className="contenedor encabezado-contenido">
@@ -14,6 +14,16 @@ function Encabezado() {
           <a href="/#categorias">Categorías</a>
           <Link to="/usuarios">Usuarios</Link>
           <Link to="/gestion/libros">Gestión</Link>
+          {usuario ? (
+            <>
+              <Link to="/acceso">Hola, {usuario.nombre}</Link>
+              <button className="boton-salir" type="button" onClick={alCerrarSesion}>
+                Salir
+              </button>
+            </>
+          ) : (
+            <Link to="/acceso">Acceso</Link>
+          )}
           <Link className="boton-carrito" to="/carrito" aria-label="Ir al carrito">
             <span aria-hidden="true">🛒</span>
             Carrito

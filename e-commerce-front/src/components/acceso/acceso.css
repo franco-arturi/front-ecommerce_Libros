@@ -1,0 +1,185 @@
+/* Pantalla 5 - Registro e inicio de sesión. Usa las variables de color definidas en index.css. */
+
+.pagina-acceso {
+  display: flex;
+  justify-content: center;
+  padding-block: 56px 90px;
+}
+
+.tarjeta-acceso {
+  width: 100%;
+  max-width: 440px;
+  overflow: hidden;
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  background: var(--blanco);
+  box-shadow: var(--sombra);
+}
+
+.tarjeta-acceso-barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 22px;
+  color: var(--blanco);
+  background: var(--azul-oscuro);
+  font-size: 0.95rem;
+}
+
+.tarjeta-acceso-contenido {
+  padding: 28px 22px;
+}
+
+.tarjeta-acceso-contenido h1 {
+  margin-bottom: 22px;
+  color: var(--azul-texto);
+  font-size: clamp(1.5rem, 4vw, 1.9rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.acceso-aviso {
+  margin: -8px 0 18px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: var(--azul-oscuro);
+  background: var(--azul-suave);
+  font-size: 0.9rem;
+}
+
+/* ---- Formulario ---- */
+
+.formulario-acceso {
+  display: grid;
+  gap: 14px;
+}
+
+.campos-dobles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.campo-acceso input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  color: var(--azul-texto);
+  background: var(--blanco);
+}
+
+.campo-acceso input:focus {
+  border-color: var(--azul-principal);
+  outline: 2px solid var(--azul-suave);
+}
+
+.boton-acceso {
+  display: block;
+  padding: 14px;
+  border: 0;
+  border-radius: 8px;
+  color: var(--blanco);
+  background: var(--azul-principal);
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+}
+
+.boton-acceso:hover,
+.boton-acceso:focus-visible {
+  background: var(--azul-oscuro);
+}
+
+.boton-acceso:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.acceso-error {
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid #d7aaaa;
+  border-radius: 8px;
+  color: #8a3030;
+  background: #fff8f8;
+  font-size: 0.9rem;
+}
+
+.acceso-cambio-modo {
+  margin: 4px 0 0;
+  color: var(--texto-secundario);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.acceso-cambio-modo button {
+  padding: 0;
+  border: 0;
+  color: var(--azul-principal);
+  background: transparent;
+  font-weight: 800;
+}
+
+/* ---- Bienvenida ---- */
+
+.bienvenida-usuario {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  text-align: center;
+}
+
+.bienvenida-usuario h2 {
+  margin-bottom: 0;
+  color: var(--azul-texto);
+}
+
+.bienvenida-usuario p {
+  margin-bottom: 8px;
+  color: var(--texto-secundario);
+  overflow-wrap: anywhere;
+}
+
+.bienvenida-usuario .boton-acceso {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.acceso-iniciales {
+  display: grid;
+  width: 64px;
+  height: 64px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--blanco);
+  background: var(--azul-oscuro);
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.boton-cerrar-sesion {
+  padding: 8px 16px;
+  border: 1px solid var(--azul-principal);
+  border-radius: 6px;
+  color: var(--azul-principal);
+  background: transparent;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+/* ---- Celular ---- */
+
+@media (max-width: 680px) {
+  .pagina-acceso {
+    padding-block: 32px 64px;
+  }
+}
+
+@media (max-width: 390px) {
+  .campos-dobles {
+    grid-template-columns: 1fr;
+  }
+}

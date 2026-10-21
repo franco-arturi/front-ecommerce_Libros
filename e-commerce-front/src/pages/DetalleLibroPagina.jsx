@@ -7,7 +7,8 @@ import SelectorCantidad from '../components/detalle/SelectorCantidad.jsx'
 import { agregarAlCarrito } from '../services/carritoService.js'
 import { obtenerDetalleLibro } from '../services/catalogoService.js'
 
-function DetalleLibroPagina() {
+// 'usuario' llega desde App: para agregar al carrito hay que haber iniciado sesión.
+function DetalleLibroPagina({ usuario }) {
   const { id } = useParams()
   const [libro, setLibro] = useState(null)
   const [imagenes, setImagenes] = useState([])
@@ -16,6 +17,7 @@ function DetalleLibroPagina() {
   const [error, setError] = useState('')
   const [agregando, setAgregando] = useState(false)
   const [mensaje, setMensaje] = useState('')
+  const [pedirSesion, setPedirSesion] = useState(false)
 
   useEffect(() => {
     let componenteActivo = true
@@ -42,6 +44,11 @@ function DetalleLibroPagina() {
   }, [id])
 
   const manejarAgregar = () => {
+    if (!usuario) {
+      setPedirSesion(true)
+      return
+    }
+
     setAgregando(true)
     setMensaje('')
 
@@ -92,6 +99,12 @@ function DetalleLibroPagina() {
             {mensaje && (
               <p className="detalle-mensaje" role="status">
                 {mensaje}
+              </p>
+            )}
+
+            {pedirSesion && !usuario && (
+              <p className="detalle-mensaje" role="alert">
+                Para agregar libros al carrito tenés que <Link to="/acceso">iniciar sesión</Link>.
               </p>
             )}
           </div>
