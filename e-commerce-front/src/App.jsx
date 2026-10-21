@@ -7,6 +7,7 @@ import ResultadosPagina from './pages/ResultadosPagina.jsx'
 import UsuariosPagina from './pages/UsuariosPagina.jsx'
 import CarritoPagina from './pages/CarritoPagina.jsx'
 import GestionLibrosPagina from './pages/GestionLibrosPagina.jsx'
+import CategoriasPagina from './pages/CategoriasPagina.jsx'
 import AccesoPagina from './pages/AccesoPagina.jsx'
 import './App.css'
 
@@ -43,6 +44,7 @@ function App() {
           }
         />
         <Route path="/gestion/libros" element={<GestionLibrosPagina />} />
+        <Route path="/gestion/categorias" element={<CategoriasPagina />} />
         <Route
           path="/acceso"
           element={

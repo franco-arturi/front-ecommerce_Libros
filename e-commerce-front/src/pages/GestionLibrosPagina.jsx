@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import ListaLibrosGestion from '../components/gestion/ListaLibrosGestion.jsx'
 import FormularioLibro from '../components/gestion/FormularioLibro.jsx'
 import {
@@ -11,6 +12,7 @@ import {
   eliminarImagen,
 } from '../services/gestionLibrosService.js'
 import '../components/gestion/gestionLibros.css'
+import '../components/categorias/categorias.css'
 
 function GestionLibrosPagina() {
   const [libros, setLibros] = useState([])
@@ -94,9 +96,14 @@ function GestionLibrosPagina() {
     <main className="contenedor pagina-gestion">
       <div className="gestion-encabezado">
         <h1>Libros e imágenes</h1>
-        <button type="button" onClick={() => setCreandoLibro(true)}>
-          Nuevo libro
-        </button>
+        <div className="gestion-acciones">
+          <Link className="enlace-secundario" to="/gestion/categorias">
+            Categorías
+          </Link>
+          <button type="button" onClick={() => setCreandoLibro(true)}>
+            Nuevo libro
+          </button>
+        </div>
       </div>
 
       {creandoLibro && (
