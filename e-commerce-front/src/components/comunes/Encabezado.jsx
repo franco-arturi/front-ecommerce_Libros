@@ -13,10 +13,10 @@ function Encabezado() {
           <a href="/#catalogo">Catálogo</a>
           <a href="/#categorias">Categorías</a>
           <Link to="/usuarios">Usuarios</Link>
-          <button className="boton-carrito" type="button" aria-label="Abrir carrito">
+          <Link className="boton-carrito" to="/carrito" aria-label="Ir al carrito">
             <span aria-hidden="true">🛒</span>
             Carrito
-          </button>
+          </Link>
         </nav>
       </div>
     </header>
