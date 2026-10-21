@@ -1,0 +1,345 @@
+/* Pantalla 6 - Libros e imágenes. Usa las variables de color definidas en index.css. */
+
+.pagina-gestion {
+  padding-block: 56px 90px;
+}
+
+.gestion-encabezado {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.gestion-encabezado h1 {
+  margin-bottom: 0;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  letter-spacing: -0.03em;
+}
+
+.gestion-encabezado button {
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 8px;
+  color: var(--blanco);
+  background: var(--azul-principal);
+  font-weight: 800;
+}
+
+.gestion-encabezado button:hover,
+.gestion-encabezado button:focus-visible {
+  background: var(--azul-oscuro);
+}
+
+/* ---- Tabla (escritorio) ---- */
+
+.tabla-gestion {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  background: var(--blanco);
+  box-shadow: 0 8px 24px rgba(23, 58, 94, 0.07);
+}
+
+.tabla-gestion th {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--borde);
+  color: var(--texto-secundario);
+  background: var(--azul-suave);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.tabla-gestion td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--azul-suave);
+  vertical-align: middle;
+}
+
+.tabla-gestion tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.tabla-gestion strong {
+  display: block;
+}
+
+.libro-autor {
+  color: var(--texto-secundario);
+  font-size: 0.85rem;
+}
+
+.libro-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  text-align: right;
+}
+
+.libro-acciones button {
+  padding: 8px 14px;
+  border: 1px solid var(--azul-principal);
+  border-radius: 6px;
+  color: var(--azul-principal);
+  background: transparent;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.libro-acciones button:hover,
+.libro-acciones button:focus-visible {
+  color: var(--blanco);
+  background: var(--azul-principal);
+}
+
+.libro-acciones .boton-peligro {
+  border-color: #d7aaaa;
+  color: #8a3030;
+}
+
+.libro-acciones .boton-peligro:hover,
+.libro-acciones .boton-peligro:focus-visible {
+  color: var(--blanco);
+  background: #8a3030;
+}
+
+.fila-expandida td {
+  background: var(--fondo);
+}
+
+/* ---- Formulario de libro ---- */
+
+.formulario-libro {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 640px;
+  margin: 0 0 28px;
+  padding: 22px;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  background: var(--blanco);
+}
+
+.formulario-libro label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--texto-secundario);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.formulario-libro input,
+.formulario-libro select {
+  padding: 9px 11px;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  color: var(--azul-texto);
+  background: var(--blanco);
+  font-size: 0.95rem;
+}
+
+.formulario-libro-acciones {
+  display: flex;
+  grid-column: 1 / -1;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.formulario-libro-acciones button {
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 6px;
+  color: var(--blanco);
+  background: var(--azul-principal);
+  font-weight: 800;
+}
+
+.formulario-libro-acciones .boton-secundario {
+  color: var(--texto-secundario);
+  background: var(--azul-suave);
+}
+
+/* ---- Administrador de imágenes ---- */
+
+.administrador-imagenes {
+  max-width: 640px;
+}
+
+.lista-imagenes {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.lista-imagenes li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  background: var(--blanco);
+  font-size: 0.85rem;
+  overflow-wrap: anywhere;
+}
+
+.lista-imagenes li button {
+  flex: 0 0 auto;
+  padding: 6px 12px;
+  border: 1px solid #d7aaaa;
+  border-radius: 6px;
+  color: #8a3030;
+  background: transparent;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.imagenes-vacio {
+  margin-bottom: 16px;
+  color: var(--texto-secundario);
+  font-size: 0.9rem;
+}
+
+.formulario-imagen {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.formulario-imagen label {
+  flex: 1;
+}
+
+.formulario-imagen input {
+  width: 100%;
+  padding: 9px 11px;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+}
+
+.formulario-imagen button {
+  padding: 9px 16px;
+  border: 0;
+  border-radius: 6px;
+  color: var(--blanco);
+  background: var(--azul-principal);
+  font-weight: 800;
+}
+
+.administrador-imagenes > .boton-secundario {
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 6px;
+  color: var(--texto-secundario);
+  background: var(--azul-suave);
+  font-weight: 700;
+}
+
+/* ---- Estados (cargando, error, vacío) ---- */
+
+.gestion-estado {
+  padding: 48px 24px;
+  border: 1px dashed var(--borde);
+  border-radius: 10px;
+  color: var(--texto-secundario);
+  background: var(--blanco);
+  text-align: center;
+}
+
+.gestion-estado.error {
+  color: #8a3030;
+  border-color: #d7aaaa;
+  background: #fff8f8;
+}
+
+.gestion-estado h3 {
+  margin-bottom: 8px;
+  color: var(--azul-texto);
+}
+
+.gestion-estado p {
+  margin-bottom: 0;
+}
+
+/* ---- Celular: la tabla se muestra como tarjetas ---- */
+
+@media (max-width: 680px) {
+  .pagina-gestion {
+    padding-block: 40px 64px;
+  }
+
+  .gestion-encabezado {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .tabla-gestion,
+  .tabla-gestion tbody,
+  .tabla-gestion tr,
+  .tabla-gestion td {
+    display: block;
+  }
+
+  .tabla-gestion {
+    overflow: visible;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .tabla-gestion thead {
+    display: none;
+  }
+
+  .tabla-gestion tr {
+    margin-bottom: 14px;
+    padding: 16px;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    background: var(--blanco);
+  }
+
+  .fila-expandida {
+    border: 0;
+    background: transparent;
+  }
+
+  .tabla-gestion td {
+    padding: 6px 0;
+    border-bottom: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .tabla-gestion td[data-etiqueta='Categoría']::before,
+  .tabla-gestion td[data-etiqueta='Precio']::before {
+    content: attr(data-etiqueta);
+    display: block;
+    color: var(--texto-secundario);
+    font-size: 0.78rem;
+  }
+
+  .libro-acciones {
+    justify-content: flex-start;
+  }
+
+  .formulario-libro {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+
+  .formulario-imagen {
+    flex-direction: column;
+  }
+}
