@@ -148,6 +148,160 @@
   color: #7b8fa1;
 }
 
+.buscador-enviar {
+  flex: 0 0 auto;
+  padding: 9px 14px;
+  border: 0;
+  border-radius: 6px;
+  color: var(--blanco);
+  background: var(--azul-principal);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.buscador-enviar:hover,
+.buscador-enviar:focus-visible {
+  background: var(--azul-oscuro);
+}
+
+.resultados-superior {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.resultados-superior .buscador {
+  width: min(100%, 560px);
+  margin-left: auto;
+}
+
+.resultados-superior .volver {
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+.resultados-encabezado {
+  margin-bottom: 28px;
+}
+
+.resultados-encabezado h1 {
+  margin-bottom: 8px;
+  font-size: 2.25rem;
+}
+
+.resultados-consulta {
+  margin-bottom: 0;
+  color: var(--texto-secundario);
+}
+
+.resultados-layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 32px;
+}
+
+.filtros-resultados {
+  align-self: start;
+  padding: 20px;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  background: var(--blanco);
+}
+
+.filtro-precio > label {
+  margin: 0;
+  color: var(--azul-texto);
+  font-weight: 800;
+}
+
+.filtros-resultados .filtro-categorias {
+  flex-direction: column;
+  margin: 0;
+  overflow: visible;
+}
+
+.filtro-precio {
+  display: grid;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.filtro-precio strong {
+  color: var(--azul-principal);
+}
+
+.filtro-precio input {
+  width: 100%;
+  accent-color: var(--azul-principal);
+}
+
+.filtro-ubicacion {
+  display: grid;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.filtro-ubicacion > label {
+  color: var(--azul-texto);
+  font-weight: 800;
+}
+
+.filtro-ubicacion select {
+  width: 100%;
+  min-height: 42px;
+  padding: 8px 10px;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  color: var(--azul-texto);
+  background: var(--blanco);
+  font: inherit;
+}
+
+.resultados-listado {
+  min-width: 0;
+}
+
+@media (max-width: 680px) {
+  .buscador input {
+    min-width: 0;
+  }
+
+  .resultados-superior {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 32px;
+  }
+
+  .resultados-superior .buscador {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .resultados-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+}
+
+@media (max-width: 390px) {
+  .resultados-encabezado h1 {
+    font-size: 1.9rem;
+  }
+
+  .resultados-superior .buscador {
+    gap: 8px;
+    padding-inline: 12px;
+  }
+
+  .buscador-enviar {
+    padding-inline: 10px;
+  }
+}
+
 .catalogo {
   padding-block: 64px 90px;
 }

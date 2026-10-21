@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Buscador from '../components/catalogo/Buscador.jsx'
 import FiltroCategorias from '../components/catalogo/FiltroCategorias.jsx'
 import ListaLibros from '../components/catalogo/ListaLibros.jsx'
@@ -11,6 +12,7 @@ const normalizar = (texto) =>
     .toLowerCase()
 
 function InicioPagina() {
+  const navegar = useNavigate()
   const [libros, setLibros] = useState([])
   const [categorias, setCategorias] = useState([])
   const [busqueda, setBusqueda] = useState('')
@@ -62,7 +64,11 @@ function InicioPagina() {
           <p className="presentacion-texto">
             Buscá por título o autor y descubrí libros para cada momento.
           </p>
-          <Buscador valor={busqueda} alCambiar={setBusqueda} />
+          <Buscador
+            valor={busqueda}
+            alCambiar={setBusqueda}
+            alBuscar={(termino) => navegar(`/resultados?q=${encodeURIComponent(termino)}`)}
+          />
         </div>
       </section>
 
